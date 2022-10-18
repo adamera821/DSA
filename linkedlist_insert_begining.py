@@ -36,6 +36,24 @@ class Linkedlist:
                 stringfying += str(current_node.get_value()) + "\n"
             current_node = current_node.get_next_node()
         return stringfying
-
+   ''' Code Removing node'''
+    def remove_node(self, node_to_remove):
+        current_node = self.get_head()
+        if current_node.get_value() == node_to_remove:
+            self.head_value = self.get_next_node()
+        else:
+            while current_node:
+                next_node = current_node.get_next_node()
+                if next_node.get_value() == node_to_remove:
+                    next_node.set_next_node(next_node.get_next_node())
+                    current_node = None
+                else:
+                    current_node = next_node
+           
+           
+        
 ll = Linkedlist(80)
 ll.inser_begining(89)
+ll.inser_begining(83)
+ll.inser_begining(81)
+ll.remove_node(89)
