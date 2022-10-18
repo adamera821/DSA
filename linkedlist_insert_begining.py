@@ -40,7 +40,7 @@ class Linkedlist:
     def remove_node(self, node_to_remove):
         current_node = self.get_head()
         if current_node.get_value() == node_to_remove:
-            self.head_value = self.get_next_node()
+            self.head_value = current_node.get_next_node()
         else:
             while current_node:
                 next_node = current_node.get_next_node()
