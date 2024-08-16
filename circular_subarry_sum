@@ -1,0 +1,26 @@
+'' Last element connect to first element - circular element'''''
+def max_sum_sub_arr(arr,n):
+    max_sum = arr[0]
+    res = arr[0]
+    for i in range(1, n):
+        max_sum = max(max_sum+arr[i], arr[i])
+        res = max(max_sum, res)
+    return res
+
+def max_circular_sub_arr(arr, n):
+    max_norma = max_sum_sub_arr(arr,n)
+    if max_norma<0:
+        return max_norma
+    arr_sum = 0
+    for i in range(0, n):
+        arr_sum +=arr[i]
+        arr[i] = -arr[i]
+    max_circ = arr_sum + max_sum_sub_arr(arr,n)
+    return max(max_norma, max_circ)
+    
+I/p: x = [8, -4, 3, -5, 4]
+n = 5
+
+o/p = 12
+
+print(max_circular_sub_arr(x,n))
