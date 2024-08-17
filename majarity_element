@@ -1,0 +1,40 @@
+def maj_el(arr,n):
+''Returning Index or Element""
+    for i in range(0, n):
+        count_arr =1
+        for j in range(i+1, n):
+            if arr[i] == arr[j]:
+                count_arr += 1
+        if count_arr > n/2:
+            return arr[i] 
+    return -1
+    
+arr = [1,2,3,4,3,2,3,3,3,3]
+n = 10
+print(maj_el(arr,n))
+
+"""Morrey's voting algorithm""
+
+def find_maj(arr,n):
+    res = 0
+    count = 1
+    for i in range(1,n):
+        if arr[res] == arr[i]:
+            count +=1
+        else:
+            count -=1
+        if count == 0:
+            res = i
+            count = 1
+    count = 0
+    for i in range(0,n):
+        if arr[i] == arr[res]:
+            count +=1
+    if count <= n//2:
+        res = -1
+    return arr[res] 
+arr = [1,2,2]
+n = len(arr)
+print(find_maj(arr,n))
+            
+            
