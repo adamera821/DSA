@@ -1,0 +1,16 @@
+def k_max_sum_sub_array(arr, k, n):
+    cur = 0
+    for i in range(k):
+        cur +=arr[i]
+    res = cur
+    for j  in range(k, n):
+        cur = cur + arr[j] - arr[j-k]
+        res = max(cur, res)
+    return res
+
+arr = [1,8,30,-5,20,7]
+k = 4
+n = int(len(arr))
+print(k_max_sum_sub_array(arr,k, n))
+
+o/p = 53
