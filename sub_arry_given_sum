@@ -1,0 +1,33 @@
+""Navie solution""
+def sub_arr_given_sum(arr, s):
+    for i in range(len(arr)):
+        cur = 0
+        for j in range(i, len(arr)):
+            cur += arr[j]
+            if cur == s:
+                return True
+    return False
+
+arr = [3,2,0,4,7]
+s = 6
+print(sub_arr_given_sum(arr,s))
+o/p = True
+
+""""efficient Solution""""
+def sub_arr_given_sum(arr, s_um):
+    start_indx, curr = 0, 0
+    for i in range(len(arr)):
+        curr +=arr[i]
+        while(curr > s_um):
+            curr -= arr[start_indx]
+            start_indx += 1
+        if curr == s_um:
+            return True
+    return False
+
+arr = [3,2,0,4,7]
+s = 6
+print(sub_arr_given_sum(arr,s))
+
+O(n)
+O(1)
