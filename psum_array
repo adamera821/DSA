@@ -1,0 +1,16 @@
+"""Have to work on full ocde"""
+
+def psum(l, i, r):
+    n = len(l)
+    psum = [0]*n
+    psum[0] = l[0]
+    for i in range(1, n):
+        psum[i] = psum[i-1] + l[i]
+    print(psum)
+    if len(l) == 0:
+        return psum[r]
+    else:
+        return psum[r] - psum[len(l)-1]
+        
+l = [1,2,3,4,5,6]
+print(psum(l, 2))
