@@ -1,0 +1,8 @@
+def josphus_problm(n,k):
+    if n == 1:
+        return 0
+    else:
+        return ((josphus_problm(n-1,k)+k)%n)
+print(josphus_problm(5,3))
+
+t(n)
