@@ -1,0 +1,8 @@
+def sub_given_arr(arr, curr, ind):
+    if ind == len(arr):
+        print(curr, end=" ")
+        return
+    sub_given_arr(arr, curr, ind+1)
+    sub_given_arr(arr, curr+str[ind] + ind+1)
+    
+print(sub_given_arr("ABC", "B",3))
