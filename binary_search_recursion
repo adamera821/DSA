@@ -1,0 +1,19 @@
+def binar_search(arr, s_n, low, high):
+    if low > high:
+        return -1
+    mid = (low+high)//2
+    if arr[mid] == s_n:
+        return mid
+    
+    if arr[mid] < s_n:
+        return binar_search(arr, s_n, mid+1, high)
+    else:
+        return binar_search(arr, s_n, low, mid-1)
+
+
+a = [1,2,3,4,5]
+s_n = 0
+low = 0
+high = len(a)-1 
+print(binar_search(a,s_n,low,high))
+    
