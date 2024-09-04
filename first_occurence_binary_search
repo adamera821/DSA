@@ -1,0 +1,24 @@
+def binar_search_first_occurence(arr, s_n, low, high):
+    low = 0
+    high = len(arr)-1
+    while low<=high:
+        mid = (low+high)//2
+        if s_n > arr[mid]:
+            low = mid + 1 
+        elif s_n < arr[mid]:
+            high = mid - 1
+        else:
+            if mid == 0 or arr[mid-1] != arr[mid]:
+                return mid
+            else:
+                high = mid -1
+    return -1
+            
+
+
+a = [1,2,2, 3,4,5]
+s_n = 2
+low = 0
+high = len(a)-1 
+print(binar_search_first_occurence(a,s_n,low,high))
+    
