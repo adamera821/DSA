@@ -1,0 +1,15 @@
+def count_occurence(arr, s_n, low, high):
+    first = first_occur(arr, x)
+    if first == -1:
+        return 0
+    else:
+        return last_occurence(arr,x) - first + 1
+            
+
+
+a = [1,2,2,2, 3,4,5]
+s_n = 2
+low = 0
+high = len(a)-1 
+print(binar_search_last_occurence(a,s_n,low,high))
+    
