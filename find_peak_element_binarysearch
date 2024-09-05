@@ -1,0 +1,17 @@
+"Peak = not smaller than nighboure"
+
+def find_peak_element(arr,n):
+    low = 0 
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low+high)//2
+        if ((mid == 0 or arr[mid-1]<= arr[mid]) and (mid == n-1 or arr[mid+1]<= arr[mid])):
+            return mid
+        if mid > 0 or arr[mid-1]>= arr[mid]:
+            hight = mid -1 
+        else:
+            low = mid +1 
+    return -1 
+x = [1,25,3] 
+n = len(x)
+print(find_peak_element(x,n))
