@@ -1,0 +1,21 @@
+def two_point(arr,x, s_i):
+    s_i = 0
+    j = len(arr) - 1 
+    while s_i < j:
+        if arr[s_i] + arr[j] == x:
+            return True
+        elif arr[s_i] +arr[j] < x:
+            s_i = s_i + 1
+        else:
+            j = j - 1
+    return False
+
+def three_pointer(arr,x):
+    for i in range(len(arr)-2):
+        if two_point(arr, x-arr[i],i+1):
+            return True
+    return False
+
+x = [1,2,3,4,5]
+y = 5
+print(three_pointer(x,y))
