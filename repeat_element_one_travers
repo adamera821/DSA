@@ -1,0 +1,12 @@
+def repeat_elm(arr,n):
+    vist = [False]*n
+    for i in range(n):
+        if vist[arr[i]]:
+            return arr[i]
+        vist[arr[i]] = True
+    return -1
+
+x = [1,2,3,3]
+n = len(x)
+print(repeat_elm(x,n))
+            
