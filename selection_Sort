@@ -1,0 +1,14 @@
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n-1):
+        min_elm = i 
+        for j in range(i+1, n):
+            if arr[j] < arr[min_elm]:
+                min_elm = j
+        arr[min_elm], arr[i] = arr[i], arr[min_elm]
+    return arr
+x = [6,2,9,0,13,8,8]
+
+print(selection_sort(x))
+
+
