@@ -1,0 +1,6 @@
+def merg_sort(arr, l, r):
+    if r>l:
+        m = (l+r)//2
+        merg_sort(arr, l, m)
+        merg_sort(arr, m+1, r)
+        merge(arr, l, m , r)
